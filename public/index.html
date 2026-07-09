@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФотоКопиЦентр — печать фото, сувениры, копицентр в Волгограде</title>
+<meta name="description" content="Печать фотографий, фотомагниты, кружки, футболки, печати и штампы, ксерокопия и другие услуги копицентра. Онлайн-заказ и оплата.">
+<meta name="theme-color" content="#468996">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+<div id="headerMount"></div>
+
+<!-- ===== Hero + акции ===== -->
+<section class="hero" id="top">
+  <div class="hero-decor" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-top">
+      <div class="hero-title reveal">
+        <span class="hero-kicker">Копицентр нового поколения в Волгограде</span>
+        <h1>Печать фото и сувениров — быстро, качественно, с удовольствием</h1>
+        <p>Заказывайте онлайн: печать фотографий, магниты, кружки, футболки, конструктор печатей и многое другое. Заберите готовый заказ в тот же день.</p>
+        <div class="hero-cta-row">
+          <a href="#services" class="btn btn-primary">Смотреть услуги</a>
+          <button class="btn btn-ghost-light" id="heroCallBtn">Заказать звонок</button>
+        </div>
+      </div>
+      <div class="hero-side reveal">
+        <button class="hero-stamp-promo" id="heroStampPromoBtn" type="button">
+          <span class="stamp-promo-visual" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="3"/>
+              <circle cx="60" cy="60" r="41" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 4"/>
+              <path d="M60 26 A34 34 0 0 1 90 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M60 94 A34 34 0 0 1 30 76" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <polygon points="60,40 65,55 81,55 68,64 73,79 60,70 47,79 52,64 39,55 55,55" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="stamp-promo-body">
+            <span class="stamp-promo-eyebrow">Онлайн-конструктор</span>
+            <span class="stamp-promo-title">Нужна печать или штамп?</span>
+            <span class="stamp-promo-text">Соберите макет сами за пару минут — текст, логотип, оснастка, сразу видно результат</span>
+            <span class="stamp-promo-cta">Создать печать <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
+        <div class="hero-address">
+          <div class="label">Адрес и как добраться</div>
+          <strong>г. Волгоград, ул. Ангарская, 114</strong>
+          <a href="#map">Смотреть на карте →</a>
+        </div>
+      </div>
+    </div>
+    <div class="promo-row" id="promoRow"></div>
+  </div>
+</section>
+
+<!-- ===== Преимущества ===== -->
+<section class="section" id="advantages">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Почему мы</span>
+      <h2>Наши преимущества</h2>
+    </div>
+    <div class="advantages-grid" id="advantagesGrid"></div>
+  </div>
+</section>
+
+<!-- ===== Услуги (онлайн-заказ) ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Заказ онлайн</span>
+      <h2>Наши услуги</h2>
+      <p>Цены указаны от — точная стоимость зависит от размера и параметров заказа.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+    <div class="section-more">
+      <a href="uslugi.html" class="btn btn-outline">Смотреть все услуги →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Офлайн-услуги ===== -->
+<section class="section offline-section" id="offline">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Только в центре</span>
+      <h2>Офлайн-услуги</h2>
+      <p>Эти услуги выполняются только очно — нажмите на карточку, чтобы узнать цену и адрес.</p>
+    </div>
+    <div class="offline-grid" id="offlineGrid"></div>
+  </div>
+</section>
+
+<!-- ===== Отзывы (тизер) ===== -->
+<section class="section" id="reviews-teaser">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Нам доверяют</span>
+      <h2>Клиенты о нас</h2>
+    </div>
+    <div class="reviews-grid" id="reviewsTeaser"></div>
+    <div class="section-more">
+      <a href="otzyvy.html" class="btn btn-outline">Все отзывы →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Карта ===== -->
+<section class="section" id="map">
+  <div class="container">
+    <div class="map-info reveal">
+      <span class="eyebrow">Контакты</span>
+      <h2>Как нас найти</h2>
+      <p>Заходите в гости — покажем образцы работ и поможем определиться с заказом.</p>
+      <dl>
+        <dt>Адрес</dt>
+        <dd>г. Волгоград, ул. Ангарская, 114</dd>
+        <dt>Телефон</dt>
+        <dd><a href="tel:+79285330470">+7 928 533-04-70</a></dd>
+        <dt>Почта</dt>
+        <dd><a href="mailto:sap-uslugi@yandex.ru">sap-uslugi@yandex.ru</a></dd>
+        <dt>Режим работы</dt>
+        <dd>пн–пт 09:00–19:00, сб–вс 10:00–18:00</dd>
+      </dl>
+    </div>
+    <div class="map-frame reveal">
+      <iframe src="https://yandex.ru/map-widget/v1/?ll=44.470415%2C48.723011&z=17&pt=44.470415,48.723011,pm2rdm" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div id="footerMount"></div>
+<div id="modalsMount"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/services-data.js"></script>
+<script src="js/reviews-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/photo-editor.js"></script>
+<script src="js/stamp-constructor.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("heroCallBtn");
+    if (btn) btn.addEventListener("click", () => openModal("modalCall"));
+    const stampBtn = document.getElementById("heroStampPromoBtn");
+    if (stampBtn) stampBtn.addEventListener("click", () => openStandaloneStampConstructor());
+    renderReviewsTeaser();
+  });
+</script>
+</body>
+</html>

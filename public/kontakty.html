@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты — ФотоКопиЦентр</title>
+<meta name="description" content="Адрес, телефон и режим работы ФотоКопиЦентра в Волгограде. г. Волгоград, ул. Ангарская, 114.">
+<meta name="theme-color" content="#468996">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contacts">
+
+<div id="headerMount"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / Контакты</div>
+    <h1>Контакты</h1>
+    <p>Заходите в гости, звоните или пишите — ответим быстро и поможем определиться с заказом.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="map-info reveal">
+      <span class="eyebrow">Адрес</span>
+      <h2>г. Волгоград, ул. Ангарская, 114</h2>
+      <p>Дзержинский район, рядом с остановкой — удобно оставить заказ по пути.</p>
+      <dl>
+        <dt>Телефон</dt>
+        <dd><a href="tel:+79285330470">+7 928 533-04-70</a></dd>
+        <dt>Почта</dt>
+        <dd><a href="mailto:sap-uslugi@yandex.ru">sap-uslugi@yandex.ru</a></dd>
+        <dt>Мессенджер</dt>
+        <dd>MAX</dd>
+        <dt>Режим работы</dt>
+        <dd>пн–пт 09:00–19:00, сб–вс 10:00–18:00</dd>
+      </dl>
+    </div>
+    <div class="map-frame reveal">
+      <iframe src="https://yandex.ru/map-widget/v1/?ll=44.470415%2C48.723011&z=17&pt=44.470415,48.723011,pm2rdm" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section offline-section">
+  <div class="container" style="max-width:640px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Напишите нам</span>
+      <h2>Заказать обратный звонок</h2>
+      <p>Оставьте номер — перезвоним в ближайшее рабочее время и ответим на все вопросы.</p>
+    </div>
+    <div class="contact-form-card reveal">
+      <form id="formContactPage">
+        <div class="form-row">
+          <label>Как к вам обращаться?</label>
+          <input type="text" name="name" placeholder="Имя">
+        </div>
+        <div class="form-row">
+          <label>Ваш телефон *</label>
+          <input type="tel" name="phone" placeholder="+7 900 000-00-00" required>
+        </div>
+        <div class="form-row">
+          <label>Сообщение</label>
+          <textarea name="message" placeholder="Коротко опишите вопрос"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+        <div id="contactFormResult" style="margin-top:14px;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="footerMount"></div>
+<div id="modalsMount"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/services-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/stamp-constructor.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("formContactPage");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const payload = Object.fromEntries(fd.entries());
+      const resultBox = document.getElementById("contactFormResult");
+      const btn = form.querySelector('button[type=submit]');
+      btn.disabled = true; btn.textContent = "Отправляем…";
+
+      if (isStaticPreview()) {
+        resultBox.innerHTML = `<div class="offline-modal-contact"><span class="badge-constructor">Демо</span> Форма готова — заявки реально сохранятся после запуска <code>node server.js</code>.</div>`;
+        btn.disabled = false; btn.textContent = "Отправить";
+        form.reset();
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/callback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          resultBox.innerHTML = `<div class="offline-modal-contact">Заявка отправлена! Перезвоним вам в ближайшее рабочее время.</div>`;
+          form.reset();
+        } else {
+          resultBox.innerHTML = `<p style="color:var(--accent-dark);">${data.error || "Не удалось отправить заявку"}</p>`;
+        }
+      } catch (err) {
+        resultBox.innerHTML = `<p style="color:var(--accent-dark);">Ошибка сети, позвоните нам напрямую: +7 928 533-04-70</p>`;
+      }
+      btn.disabled = false; btn.textContent = "Отправить";
+    });
+  });
+</script>
+</body>
+</html>

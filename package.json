@@ -1,0 +1,11 @@
+{
+  "name": "sap-uslugi-new",
+  "version": "0.1.0",
+  "description": "Новый сайт ФотоКопиЦентра (sap-uslugi.ru) — прототип с рабочим бэкендом приёма заказов. Без внешних зависимостей — только node.js.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {}
+}

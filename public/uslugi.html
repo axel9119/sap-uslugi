@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Услуги — ФотоКопиЦентр</title>
+<meta name="description" content="Полный каталог услуг ФотоКопиЦентра: печать фото, фотомагниты, холст, кружки, футболки, печати и штампы, реставрация фото и офлайн-услуги.">
+<meta name="theme-color" content="#468996">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="services">
+
+<div id="headerMount"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / Услуги</div>
+    <h1>Все услуги в одном месте</h1>
+    <p>Оформляйте заказ онлайн — с фоторедактором и конструктором печатей — или уточняйте офлайн-услуги, которые выполняются только очно в нашем центре.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="category-tabs" id="categoryTabs">
+      <button class="chip active" data-cat="all">Все услуги</button>
+      <button class="chip" data-cat="photo">Печать фото</button>
+      <button class="chip" data-cat="souvenir">Сувениры</button>
+      <button class="chip" data-cat="stamps">Печати и штампы</button>
+      <button class="chip" data-cat="restore">Реставрация</button>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section class="section offline-section" id="offline">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Только в центре</span>
+      <h2>Офлайн-услуги</h2>
+      <p>Эти услуги выполняются только очно — нажмите на карточку, чтобы узнать цену и адрес.</p>
+    </div>
+    <div class="offline-grid" id="offlineGrid"></div>
+  </div>
+</section>
+
+<div id="footerMount"></div>
+<div id="modalsMount"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/services-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/photo-editor.js"></script>
+<script src="js/stamp-constructor.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.getElementById("categoryTabs");
+    tabs.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-cat]");
+      if (!btn) return;
+      tabs.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+      btn.classList.add("active");
+      const cat = btn.dataset.cat;
+      const list = cat === "all" ? ONLINE_SERVICES : ONLINE_SERVICES.filter((s) => s.category === cat);
+      renderServices(list, "servicesGrid");
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+// Простые линейные SVG-иконки (без внешних зависимостей и шрифтов иконок)
+const ICONS = {
+  photo: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5.2-5-3.3 3.4L10 12l-7 6"/></svg>`,
+  doc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 13h6M9.5 16.5h6M9.5 9.5h2"/></svg>`,
+  magnet: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4v7a5 5 0 0010 0V4"/><path d="M4 4h6M14 4h6M4 11h6M14 11h6"/></svg>`,
+  canvas: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M8 20v2M16 20v2M4 8h2M4 16h2"/></svg>`,
+  mug: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h11v9a4 4 0 01-4 4H9a4 4 0 01-4-4V6z"/><path d="M16 8h2a2.5 2.5 0 010 5h-2"/><path d="M8 3.5c0 1-1 1-1 2M12 3.5c0 1-1 1-1 2"/></svg>`,
+  tshirt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3L4 6l1.5 3L8 8v12h8V8l2.5 1L20 6l-4-3-2 2h-4z"/></svg>`,
+  ceramic: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="M8 6V4h8v2M9 10h6M9 13.5h6"/></svg>`,
+  restore: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11a9 9 0 1 1 2.6 6.3"/><path d="M3 5v6h6"/></svg>`,
+  stamp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="7" rx="1.5"/><path d="M9 10v3.5h6V10M4 20h16M6 20l1-4.5h10L18 20"/></svg>`,
+  sticker: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2v-7z"/><path d="M14 3v7h7"/></svg>`,
+  disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/></svg>`,
+  video: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="13" height="12" rx="1.5"/><path d="M16 10l5-3v10l-5-3"/></svg>`,
+  cartridge: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="7" width="12" height="11" rx="1.5"/><path d="M9 7V4h6v3M10 11h4M10 14h4"/></svg>`,
+  key: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="14" r="4"/><path d="M11 11l8-8M16 6l2 2M18.5 3.5l2 2"/></svg>`,
+  laminate: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9h16M4 15h16"/></svg>`,
+  scan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8V5.5A1.5 1.5 0 015.5 4H8M16 4h2.5A1.5 1.5 0 0120 5.5V8M20 16v2.5a1.5 1.5 0 01-1.5 1.5H16M8 20H5.5A1.5 1.5 0 014 18.5V16"/><path d="M4 12h16"/></svg>`,
+  brochure: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="16" rx="1.5"/><path d="M9 4v16M2.5 7v1.4M2.5 11v1.4M2.5 15v1.4"/></svg>`,
+  battery: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="16" height="8" rx="1.5"/><path d="M21 10.5v3"/><path d="M7 10.5v3M11 10.5v3"/></svg>`,
+  quality: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.6 5.3 5.9.8-4.3 4.1 1 5.8L12 16l-5.2 3 1-5.8-4.3-4.1 5.9-.8z"/></svg>`,
+  speed: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>`,
+  individual: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1-3.6 4-5.5 7-5.5S18 16.4 19 20"/></svg>`,
+  location: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>`,
+  phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h3.2l1.4 4.4-2.2 1.7a13 13 0 006.5 6.5l1.7-2.2 4.4 1.4V19a2 2 0 01-2.2 2C10 20.6 3.4 14 3 6.2A2 2 0 015 4z"/></svg>`,
+  mail: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg>`,
+  max: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4.5" width="18" height="13" rx="3"/><path d="M8 16.5l-2.5 3v-3"/></svg>`,
+  upload: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>`,
+  close: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12.5l5 5L20 7"/></svg>`,
+  editor: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l4.5-1.3L19 8.2a2 2 0 000-2.8l-1.4-1.4a2 2 0 00-2.8 0L4.3 14.5z"/><path d="M13.5 6.5l3 3"/></svg>`,
+  cart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.4 12.2a2 2 0 002 1.8h7.6a2 2 0 002-1.8L21 8H6.2"/><circle cx="10" cy="20.5" r="1.4"/><circle cx="17" cy="20.5" r="1.4"/></svg>`,
+  trash: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4.8A1.8 1.8 0 0110.8 3h2.4A1.8 1.8 0 0115 4.8V7m2 0v12.2A1.8 1.8 0 0115.2 21H8.8A1.8 1.8 0 017 19.2V7"/></svg>`,
+  plus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>`,
+  minus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/></svg>`,
+};
+
+function icon(name) {
+  return ICONS[name] || "";
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Галерея работ — ФотоКопиЦентр</title>
+<meta name="description" content="Примеры наших работ: печать фото, сувениры, печати и штампы, широкоформатная печать.">
+<meta name="theme-color" content="#468996">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery">
+
+<div id="headerMount"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / Галерея</div>
+    <h1>Примеры наших работ</h1>
+    <p>Небольшая часть заказов, которые мы напечатали и изготовили. Полную галерею и свежие работы добавим по мере поступления фото от заказчика.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-filter" id="galleryFilter">
+      <button class="chip active" data-cat="all">Все</button>
+      <button class="chip" data-cat="photo">Печать фото</button>
+      <button class="chip" data-cat="souvenir">Сувениры</button>
+      <button class="chip" data-cat="stamps">Печати и штампы</button>
+      <button class="chip" data-cat="print">Широкоформатная печать</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container" style="text-align:center;">
+    <h2 class="reveal">Хотите так же?</h2>
+    <p class="reveal" style="color:var(--gray-700); max-width:520px; margin:0 auto 24px;">Оформите заказ онлайн — с фоторедактором и конструктором печатей.</p>
+    <a href="uslugi.html" class="btn btn-primary reveal">Смотреть услуги</a>
+  </div>
+</section>
+
+<div id="footerMount"></div>
+<div id="modalsMount"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/services-data.js"></script>
+<script src="js/gallery-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/stamp-constructor.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderGallery("all");
+    const filter = document.getElementById("galleryFilter");
+    filter.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-cat]");
+      if (!btn) return;
+      filter.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+      btn.classList.add("active");
+      renderGallery(btn.dataset.cat);
+    });
+  });
+</script>
+</body>
+</html>

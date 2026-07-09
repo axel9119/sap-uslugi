@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отзывы — ФотоКопиЦентр</title>
+<meta name="description" content="Отзывы клиентов ФотоКопиЦентра в Волгограде. Оставьте свой отзыв о нашей работе.">
+<meta name="theme-color" content="#468996">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="reviews">
+
+<div id="headerMount"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / Отзывы</div>
+    <h1>Что говорят клиенты</h1>
+    <p>Больше 1000 постоянных клиентов доверяют нам свои фотографии и заказы. Вот что они пишут о нас на Яндекс Картах.</p>
+    <p style="margin-top:14px;"><a href="#" class="btn btn-ghost-light" style="display:inline-flex;">Оставить отзыв на Яндекс Картах →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reviews-grid" id="reviewsAll"></div>
+  </div>
+</section>
+
+<section class="section offline-section" style="padding-top:40px;">
+  <div class="container" style="max-width:640px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ваше мнение важно</span>
+      <h2>Оставить отзыв</h2>
+      <p>Расскажите о своём опыте — это поможет нам стать лучше, а другим клиентам сделать выбор.</p>
+    </div>
+    <div class="contact-form-card reveal">
+      <form id="formReview">
+        <div class="form-row">
+          <label>Как к вам обращаться? *</label>
+          <input type="text" id="reviewName" placeholder="Имя">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" id="reviewEmail" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label>Отзыв *</label>
+          <textarea id="reviewText" placeholder="Расскажите, что вы заказывали и как всё прошло"></textarea>
+        </div>
+        <div class="form-row">
+          <label id="reviewPhotoLabel" for="reviewPhotoInput" class="editor-open-btn" style="cursor:pointer;">Прикрепить фото (необязательно)</label>
+          <input type="file" id="reviewPhotoInput" accept="image/*" style="display:none;">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Отправить отзыв</button>
+        <div id="reviewFormResult" style="margin-top:14px;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="footerMount"></div>
+<div id="modalsMount"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/services-data.js"></script>
+<script src="js/reviews-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/stamp-constructor.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", renderAllReviews);
+</script>
+</body>
+</html>
